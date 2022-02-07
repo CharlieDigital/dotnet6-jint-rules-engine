@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+
+  api:
+    image: ${REGISTRY:-rules-engine}/rules-engine-api:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    expose:
+      - 5057
+      - 7034
+    ports:
+      - "5057:5057"
