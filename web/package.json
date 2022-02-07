@@ -1,0 +1,28 @@
+{
+  "name": "dotnet6-jint-rules-engine",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "codegen": "yarn openapi --input src/services/schema/swagger.yaml --output src/services --client axios --postfix Service --useOptions --useUnionTypes"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.3.1",
+    "@mui/material": "^5.4.0",
+    "axios": "^0.25.0",
+    "form-data": "^4.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "@vitejs/plugin-react": "^1.0.7",
+    "openapi-typescript-codegen": "^0.18.1",
+    "typescript": "^4.4.4",
+    "vite": "^2.7.2"
+  }
+}

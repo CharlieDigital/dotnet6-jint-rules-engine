@@ -1,0 +1,58 @@
+openapi: 3.0.1
+info:
+  title: 'api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'
+  version: '1.0'
+paths:
+  /run:
+    post:
+      tags:
+        - Script
+      operationId: RunScript
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RunRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/RunRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/RunRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/RunResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RunResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/RunResponse'
+components:
+  schemas:
+    RunRequest:
+      type: object
+      properties:
+        ctx:
+          type: string
+          nullable: true
+        script:
+          type: string
+          nullable: true
+      additionalProperties: false
+    RunResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        res:
+          type: string
+          nullable: true
+        message:
+          type: string
+          nullable: true
+      additionalProperties: false
